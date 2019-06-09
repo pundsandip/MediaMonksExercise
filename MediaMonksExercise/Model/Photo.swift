@@ -16,3 +16,4 @@ class Photo: Codable {
     var url: String = ""
     var thumbnailUrl: String = ""
 }
+

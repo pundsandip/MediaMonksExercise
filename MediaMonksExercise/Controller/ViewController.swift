@@ -10,14 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var albums: [Albums] = []
+    let lodingView = LodingView()
+    var albums: [Album] = []
     @IBOutlet var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        lodingView.show()
+        self.view.addSubview(lodingView)
         
-        let serviceManager = ServiceManager.shared
         serviceManager.fetchAlbumList { [unowned self] result in
+            self.lodingView.hide()
             switch result {
             case .error(let error):
                 print("Error: \(error)")
@@ -50,8 +52,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         print("Selected Index: \(indexPath)")
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "photoVC") as! PhotoViewController
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.albumId = self.albums[indexPath.row].id
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 

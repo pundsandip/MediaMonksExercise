@@ -16,6 +16,9 @@
 		1307C08522AC0DE20073DF6A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307C08422AC0DE20073DF6A /* Album.swift */; };
 		1307C08722AC149B0073DF6A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307C08622AC149B0073DF6A /* Result.swift */; };
 		1307C08A22ACD3DB0073DF6A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307C08922ACD3DB0073DF6A /* Photo.swift */; };
+		1307C08C22ACD6D20073DF6A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307C08B22ACD6D20073DF6A /* PhotoViewController.swift */; };
+		1307C08E22ACD8610073DF6A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307C08D22ACD8610073DF6A /* PhotoCell.swift */; };
+		1307C09022AD09DF0073DF6A /* LodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307C08F22AD09DF0073DF6A /* LodingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		1307C08422AC0DE20073DF6A /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		1307C08622AC149B0073DF6A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		1307C08922ACD3DB0073DF6A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		1307C08B22ACD6D20073DF6A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		1307C08D22ACD8610073DF6A /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		1307C08F22AD09DF0073DF6A /* LodingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		1307C08122AC0DAD0073DF6A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1307C08D22ACD8610073DF6A /* PhotoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				1307C06F22ABC83E0073DF6A /* ViewController.swift */,
+				1307C08B22ACD6D20073DF6A /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 			children = (
 				1307C07F22AC0B380073DF6A /* ServiceManager.swift */,
 				1307C08622AC149B0073DF6A /* Result.swift */,
+				1307C08F22AD09DF0073DF6A /* LodingView.swift */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -182,7 +191,10 @@
 				1307C08A22ACD3DB0073DF6A /* Photo.swift in Sources */,
 				1307C07022ABC83E0073DF6A /* ViewController.swift in Sources */,
 				1307C08722AC149B0073DF6A /* Result.swift in Sources */,
+				1307C08E22ACD8610073DF6A /* PhotoCell.swift in Sources */,
+				1307C09022AD09DF0073DF6A /* LodingView.swift in Sources */,
 				1307C06E22ABC83E0073DF6A /* AppDelegate.swift in Sources */,
+				1307C08C22ACD6D20073DF6A /* PhotoViewController.swift in Sources */,
 				1307C08022AC0B380073DF6A /* ServiceManager.swift in Sources */,
 				1307C08522AC0DE20073DF6A /* Album.swift in Sources */,
 			);
