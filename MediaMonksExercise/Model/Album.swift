@@ -8,7 +8,8 @@
 
 import UIKit
 
-class Albums: Codable {
+class Album: Codable {
+    var userId: Int = 0
     var id: Int = 0
     var title: String = ""
 }
