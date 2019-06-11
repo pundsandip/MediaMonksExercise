@@ -40,21 +40,20 @@ class LodingView: UIVisualEffectView {
         
         if let superview = self.superview {
             
-            let width = superview.frame.size.width / 2.3
-            let height: CGFloat = 50.0
-            self.frame = CGRect(x: superview.frame.size.width / 2 - width / 2,
+            let width = superview.frame.size.width / 2
+            let height: CGFloat = 100.0
+            self.frame = CGRect(x: width - height / 2,
                                 y: superview.frame.height / 2 - height / 2,
                                 width: width,
                                 height: height)
             vibrancyView.frame = self.bounds
-            
-            let activityIndicatorSize: CGFloat = 40
-            activityIndictor.frame = CGRect(x: 5,
-                                            y: height / 2 - activityIndicatorSize / 2,
+            let activityIndicatorSize: CGFloat = 50
+            activityIndictor.frame = CGRect(x: height/4,
+                                            y: height/4,
                                             width: activityIndicatorSize,
                                             height: activityIndicatorSize)
             
-            layer.cornerRadius = 8.0
+            layer.cornerRadius = 10.0
             layer.masksToBounds = true
         }
     }

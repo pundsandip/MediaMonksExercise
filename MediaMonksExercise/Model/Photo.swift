@@ -15,5 +15,22 @@ class Photo: Codable {
     var title: String = ""
     var url: String = ""
     var thumbnailUrl: String = ""
+    
+    // download thumbnail image from url 
+    func displayImage(_ urlString: String, completion: @escaping(Data) -> Void) {
+        serviceManager.downlaodImage(urlString, completionHandler: { (result) in
+            switch result {
+            case .error(let error):
+                print(error)
+                completion(Data())
+                break
+            case .results(let result):
+                serviceManager.thumbnailImage[urlString] = result
+                completion(result)
+                break
+            }
+        })
+    }
+
 }
 
