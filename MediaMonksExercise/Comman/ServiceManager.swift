@@ -21,7 +21,7 @@ class ServiceManager {
     }
 
     var thumbnailImage: [String: Data] = [:]
-    var detailImage: [String: Data] = [:]
+    var fullImage: [String: Data] = [:]
     static let shared = ServiceManager()
     private init() {}
     
@@ -103,8 +103,8 @@ class ServiceManager {
         task.resume()
     }
     
-    //
-    func downlaodThumbnailImage(_ urlString: String, completionHandler: @escaping(Result<Data>) -> Void) {
+    // download image from given url 
+    func downlaodImage(_ urlString: String, completionHandler: @escaping(Result<Data>) -> Void) {
         if let url = URL(string: urlString) {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let error = error {
