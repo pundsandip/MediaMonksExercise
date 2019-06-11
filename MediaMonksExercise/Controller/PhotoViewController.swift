@@ -15,18 +15,19 @@ class PhotoViewController: UIViewController {
     
     var selectedIndexPath: IndexPath!
     
-    let lodingView = LodingView()
+    
     @IBOutlet var collectionView: UICollectionView!
     var albumId: Int = 0
     var photos: [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let lodingView = LodingView()
         lodingView.show()
         self.view.addSubview(lodingView)
         
         serviceManager.fetchPhotosList { [unowned self] result in
-            self.lodingView.hide()
+            lodingView.hide()
             switch result {
             case .error(let error):
                 print(error)

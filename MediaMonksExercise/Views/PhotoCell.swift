@@ -22,8 +22,13 @@ class PhotoCell: UICollectionViewCell {
         if let data = ServiceManager.shared.thumbnailImage[thumbnailUrl] {
             self.thumbnailImgView.image = UIImage(data: data)
         } else {
-            photo.displayImage(thumbnailUrl) { (data) in
-                self.thumbnailImgView.image = UIImage(data: data)
+            photo.displayImage(thumbnailUrl) { [unowned self] (data) in
+                if let image = UIImage(data: data) {
+                    self.thumbnailImgView.image = image
+                } else {
+                    print("Image not available...!!!")
+                }
+                
             }
         }
     }

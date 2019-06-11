@@ -42,13 +42,19 @@ class PhotoZoomViewController: UIViewController {
         if #available(iOS 11, *) {
             self.scrollView.contentInsetAdjustmentBehavior = .never
         }
-        // 
+        
+        
         if let data = ServiceManager.shared.fullImage[photo.url] {
             self.imageView.image = UIImage(data: data)
             self.updateConstraintsForSize(self.view.frame.size)
             updateZoomScaleForSize(view.bounds.size)
         } else {
+            let lodingView = LodingView()
+            lodingView.show()
+            self.view.addSubview(lodingView)
+            
             photo.displayImage(photo.url) { [unowned self] (data) in
+                lodingView.hide()
                 if let image = UIImage(data: data) {
                     self.imageView.image = image
                     self.imageView.frame = CGRect(x: self.imageView.frame.origin.x,
@@ -57,6 +63,8 @@ class PhotoZoomViewController: UIViewController {
                                                   height: image.size.height)
                     self.updateConstraintsForSize(self.view.frame.size)
                     self.updateZoomScaleForSize(self.view.bounds.size)
+                } else {
+                    print("Image not available...!!!")
                 }
             }
         }
