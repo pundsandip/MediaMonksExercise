@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  MediaMonksExercise
 //
 //  Created by Sandip Pund on 08/06/19.
@@ -8,16 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
+    
     let lodingView = LodingView()
     var albums: [Album] = []
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lodingView.show()
         self.view.addSubview(lodingView)
         
+        // load albums list from server and display in tableview
         serviceManager.fetchAlbumList { [unowned self] result in
             self.lodingView.hide()
             switch result {
@@ -26,20 +29,22 @@ class ViewController: UIViewController {
                 break
             case .results(let result):
                 self.albums = result
+                self.tableView.separatorStyle = .singleLine
                 self.tableView.reloadData()
                 break
             }
         }
     }
+    
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.albums.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 80.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,7 +62,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         vc.modalPresentationStyle = .overCurrentContext
         vc.albumId = self.albums[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
+    
+    
+    
 }
+
+
 
