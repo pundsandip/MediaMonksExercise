@@ -5,7 +5,9 @@ https://jsonplaceholder.typicode.com
 
 ### Album List 
 
-https://user-images.githubusercontent.com/5603140/59264269-5d34c800-8c60-11e9-9c44-7a943168e458.png
+![Screenshot 2019-06-11 at 3 07 24 PM](https://user-images.githubusercontent.com/5603140/59264269-5d34c800-8c60-11e9-9c44-7a943168e458.png)
+
+
 
 
 
